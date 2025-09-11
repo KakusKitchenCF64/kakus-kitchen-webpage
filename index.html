@@ -200,13 +200,27 @@
     </section>
 
   </div>
-
+  <script src="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.umd.js"></script>
+  <div id="n8n-chat-container"></div>
+  window.n8nChat.createChat({
+  container: '#n8n-chat-container',
+  webhookUrl: "https://passconsultingltd.app.n8n.cloud/webhook/d50723ad-f886-4cbd-960a-545118fa0ffa/chat",
+initialMessages: ["Hi there!", "My name is Kaku. How can I assist you today?"],
+  i18n: {
+    en: {
+      title: "Hi there!",
+      subtitle: "Start a chat. We're here to help you 24/7.",
+      inputPlaceholder: "Type your Question..."
+    }
+  }
+})
+  </div>
+<script src="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.umd.js"></script>
   <footer>
     <p>© 2025 Kaku's Kitchen | Homemade with Love</p>
     <p>
       <a href="https://www.facebook.com/kakuskitcheninPenarth" target="_blank">📘 Visit us on Facebook</a>
     </p>
-  </footer>
-
+  </footer> 
 </body>
 </html>

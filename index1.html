@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kaku’s Kitchen - Indian Homemade Tiffin Service</title>
+  <link rel="icon" type="image/png" href="favicon.ico">
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- n8n Chat widget CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@n8n/chat@latest/dist/style.css">
+</head>
+<body>
+  <header>
+    <h1>Kaku’s Kitchen</h1>
+  </header>
+
+  <div class="container">
+    <section>
+      <h2>About Us</h2>
+      <p>Kaku’s Kitchen brings you fresh, homemade vegetarian Indian meals, lovingly prepared with authentic recipes and traditional flavors. 
+      Our tiffin service is perfect for anyone who craves healthy, home-style food without the hassle of cooking.</p>
+      <p><b>Address:</b> 27 Greenway Close, Llandough, Penarth, CF64 2LZ</p>
+      <p><b>Service Days:</b> Monday - Friday</p>
+      <p><b>Delivery Time:</b> Between 6:00 pm - 7:00 pm</p>
+      <p><b>Notice:</b> Orders must be placed at least 24 hours in advance.</p>
+      <p><b>Contact (WhatsApp available):</b> <a href="https://wa.me/447443992018">+44-7443992018</a></p>
+    </section>
+
+    <section>
+      <h2>Weekly Tiffin Menu</h2>
+      <table border="1" cellspacing="0" cellpadding="8">
+        <thead>
+          <tr style="background-color: #f57c00; color: white;">
+            <th>Day</th>
+            <th>Curries</th>
+            <th>Includes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Monday</td><td>Dal Tadka, Bhindi</td><td>2 Chapatis + Rice Box</td></tr>
+          <tr><td>Tuesday</td><td>Chola Masala, Aaloo Jeera</td><td>2 Chapatis + Rice Box</td></tr>
+          <tr><td>Wednesday</td><td>Kadhi Pakoda, Aaloo Beans</td><td>2 Chapatis + Rice Box</td></tr>
+          <tr><td>Thursday</td><td>Matar Paneer, Mix Veg</td><td>2 Chapatis + Rice Box</td></tr>
+          <tr><td>Friday</td><td>Raajma, Aaloo Palak</td><td>2 Chapatis + Rice Box</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Pricing & Delivery</h2>
+      <p><b>Tiffin Cost:</b> £13 per meal</p>
+      <p><b>Delivery:</b></p>
+      <ul>
+        <li>Free delivery in CF64, CF11</li>
+        <li>Delivery available in other areas at extra cost</li>
+      </ul>
+      <img src="food-hygiene-rating.png" alt="Food Hygiene Rating" width="200">
+      <br><br>
+      <a href="https://wa.me/447443992018" class="order-button">Order Now via WhatsApp</a>
+    </section>
+  </div>
+
+  <!-- Chat container -->
+  <div id="n8n-chat-container"></div>
+
+  <footer>
+    <p>© 2025 Kaku’s Kitchen | Homemade with Love</p>
+    <p><a href="https://facebook.com">Visit us on Facebook</a></p>
+  </footer>
+
+  <!-- n8n Chat widget JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@n8n/chat@latest/dist/chat.bundle.umd.js"></script>
+  <script>
+    window.n8nChat.createChat({
+      container: '#n8n-chat-container',
+      webhookUrl: "https://passconsultingltd.app.n8n.cloud/webhook/6502738d-f886-4cbf-9d0a-58515a0f9d6d",
+      initialMessages: [
+        "Hi there!",
+        "My name is Kaku. How can I assist you today?"
+      ],
+      i18n: {
+        en: {
+          title: "Hi there!",
+          subtitle: "Start a chat. We're here to help you 24/7.",
+          inputPlaceholder: "Type your question..."
+        }
+      }
+    });
+  </script>
+</body>
+</html>
