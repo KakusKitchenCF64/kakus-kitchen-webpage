@@ -6,9 +6,6 @@
   <title>Kaku's Kitchen - Indian Homemade Tiffin Service</title>
   <link rel="icon" type="image/png" href="favicon.png">
 
-  <!-- Chat widget CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@n8n/chat@latest/dist/style.css">
-
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -206,28 +203,13 @@
   </div>
 
   <!-- n8n Chat widget JS -->
-<script src="https://cdn.jsdelivr.net/npm/@n8n/chat@latest/dist/chat.bundle.umd.js"></script>
-<script>
-  window.addEventListener("load", function () {
-    if (window.n8nChat) {
-      window.n8nChat.createChat({
-        webhookUrl: "https://passconsultingltd.app.n8n.cloud/webhook/d50723ad-f886-4cbd-960a-545118fa0ffa/chat",
-        initialMessages: [
-          "Hi there!",
-          "My name is Kaku. How can I assist you today?"
-        ],
-        i18n: {
-          en: {
-            title: "Hi there!",
-            subtitle: "Start a chat. We're here to help you 24/7.",
-            inputPlaceholder: "Type your Question..."
-          }
-        }
-      });
-    } else {
-      console.error("n8nChat library not loaded.");
-    }
-  });
+<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+<script type="module">
+	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+	createChat({
+		webhookUrl: 'https://passconsultingltd.app.n8n.cloud/webhook/d50723ad-f886-4cbd-960a-545118fa0ffa/chat'
+	});
 </script>
 
   <footer>
