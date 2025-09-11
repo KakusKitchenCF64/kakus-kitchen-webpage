@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kaku's Kitchen - Indian Homemade Tiffin Service</title>
   <link rel="icon" type="image/png" href="favicon.png">
+
+  <!-- Chat widget CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@n8n/chat@latest/dist/style.css">
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -200,28 +204,25 @@
     </section>
 
   </div>
-  <!-- Chat container -->
-<div id="n8n-chat-container"></div>
 
-<!-- n8n Chat widget JS -->
-<script src="https://cdn.jsdelivr.net/npm/@n8n/chat@latest/dist/chat.bundle.umd.js"></script>
-<script>
-  window.n8nChat.createChat({
-    container: '#n8n-chat-container',
-    webhookUrl: "https://passconsultingltd.app.n8n.cloud/webhook/d50723ad-f886-4cbd-960a-545118fa0ffa/chat",
-    initialMessages: [
-      "Hi there!",
-      "My name is Kaku. How can I assist you today?"
-    ],
-    i18n: {
-      en: {
-        title: "Hi there!",
-        subtitle: "Start a chat. We're here to help you 24/7.",
-        inputPlaceholder: "Type your Question..."
+  <!-- n8n Chat widget JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@n8n/chat@latest/dist/chat.bundle.umd.js"></script>
+  <script>
+    window.n8nChat.createChat({
+      webhookUrl: "https://passconsultingltd.app.n8n.cloud/webhook/d50723ad-f886-4cbd-960a-545118fa0ffa/chat",
+      initialMessages: [
+        "Hi there!",
+        "My name is Kaku. How can I assist you today?"
+      ],
+      i18n: {
+        en: {
+          title: "Hi there!",
+          subtitle: "Start a chat. We're here to help you 24/7.",
+          inputPlaceholder: "Type your Question..."
+        }
       }
-    }
-  });
-</script>
+    });
+  </script>
 
   <footer>
     <p>© 2025 Kaku's Kitchen | Homemade with Love</p>
@@ -229,5 +230,6 @@
       <a href="https://www.facebook.com/kakuskitcheninPenarth" target="_blank">📘 Visit us on Facebook</a>
     </p>
   </footer> 
+
 </body>
 </html>
