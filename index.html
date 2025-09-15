@@ -3,47 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kaku's Kitchen - Indian Homemade Tiffin Service</title>
+  <title>Kaku's Kitchen - Indian Vegetarian Homemade Tiffin Service</title>
   <link rel="icon" type="image/png" href="favicon.png">
 
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      background: #fff8f0;
+      background: url('indian-veg-bg.jpg') no-repeat center center fixed;
+      background-size: cover;
       color: #333;
     }
     header {
-      background: #e65100;
-      color: white;
+      background: linear-gradient(90deg, #ff9933, #ffffff, #138808); /* Indian flag colours */
+      color: #000;
       padding: 20px;
       text-align: center;
     }
     header img.logo {
       max-width: 160px;
       margin-bottom: 10px;
+      border-radius: 8px;
     }
     header h1 {
       margin: 0;
-      font-size: 2em;
+      font-size: 2.2em;
+      font-weight: bold;
     }
     .tagline {
       font-size: 1.1em;
       font-style: italic;
       margin-top: 5px;
+      color: #333;
     }
     .hygiene {
       margin-top: 15px;
     }
     .hygiene img {
-      max-width: 250px;
+      max-width: 220px;
       border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
     }
     .container {
-      max-width: 900px;
+      max-width: 950px;
       margin: auto;
+      background: rgba(255, 255, 255, 0.92);
       padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.25);
     }
     h2 {
       color: #e65100;
@@ -64,53 +71,216 @@
       text-align: left;
     }
     .menu th {
-      background: #f57c00;
+      background: #ff9933;
       color: white;
     }
+	.menu h2 {
+       text-align: center;
+       font-size: 1.8em;
+       font-weight: bold;
+       color: #000; /* solid black text */
+       background: linear-gradient(90deg, #ff9933, #ffffff, #138808); /* saffron-white-green */
+       padding: 12px;
+       border-radius: 6px;
+       display: inline-block;
+       margin: 0 auto 20px;
+       box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
     .highlight {
       font-weight: bold;
-      color: #e65100;
+      color: #138808;
     }
-    .order-btn {
+    .btn {
       display: inline-block;
       background: #e65100;
       color: white;
       padding: 12px 20px;
       text-decoration: none;
-      border-radius: 5px;
+      border-radius: 6px;
       font-weight: bold;
-      transition: background 0.3s;
-      margin-top: 15px;
+      transition: background 0.3s, transform 0.2s;
+      margin: 10px 5px 0 0;
     }
-    .order-btn:hover {
+    .btn:hover {
       background: #bf360c;
+      transform: scale(1.05);
     }
     footer {
       text-align: center;
-      background: #f57c00;
-      color: white;
+      background: linear-gradient(90deg, #ff9933, #ffffff, #138808);
+      color: #000;
       padding: 15px;
       margin-top: 30px;
+      font-weight: bold;
     }
     footer a {
-      color: white;
+      color: #000;
       text-decoration: underline;
     }
     .address {
       margin-top: 10px;
       line-height: 1.6;
     }
+.menu h2 {
+  text-align: center;
+  font-size: 1.9em;
+  font-weight: bold;
+  color: #000; /* Black text */
+  background: linear-gradient(90deg, #ff9933, #87CEEB, #138808); /* saffron → light blue → green */
+  padding: 14px 20px;
+  border-radius: 8px;
+  display: inline-block;
+  margin: 0 auto 20px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+}
+
+.menu-card {
+  background: #ffffff;
+  border: 3px solid #87CEEB; /* light blue border */
+  border-left: 10px solid #ff9933; /* saffron accent */
+  border-right: 10px solid #138808; /* green accent */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 12px rgba(0,0,0,0.25);
+  animation: popIn 0.8s ease;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.menu table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.menu th {
+  background: #87CEEB; /* light blue header */
+  color: #000;
+  text-align: center;
+  padding: 12px;
+  font-size: 1.1em;
+}
+
+.menu td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  font-size: 1em;
+}
+
+.menu tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.menu tr:hover {
+  background: #fff2e0;
+  transition: 0.3s;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 12px;
+  width: 400px;
+  max-width: 95%;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  animation: popIn 0.3s ease;
+}
+
+.modal-content h2 {
+  text-align: center;
+  margin-top: 0;
+  background: linear-gradient(90deg, #ff9933, #87CEEB, #138808);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.close {
+  float: right;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: #666;
+}
+
+.day-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0 20px;
+}
+
+.day-btn {
+  flex: 1;
+  margin: 0 4px;
+  padding: 10px;
+  border: none;
+  background: #87CEEB;
+  color: #000;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.day-btn:hover {
+  background: #138808;
+  color: white;
+}
+
+.day-btn.disabled {
+  background: #ccc !important;
+  cursor: not-allowed;
+  color: #666;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 8px;
+  margin: 6px 0 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.submit-btn {
+  background: #e65100;
+  color: white;
+  padding: 12px;
+  border: none;
+  width: 100%;
+  font-size: 1.1em;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background: #bf360c;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
   </style>
 </head>
 <body>
 
   <header>
-    <!-- Logo -->
     <img src="kakuskitchen Logo.jpg" alt="Kaku's Kitchen Logo" class="logo">
     <h1>Kaku's Kitchen</h1>
-    <p class="tagline">Serving happiness through food.</p>
-
-    <!-- Food Hygiene Rating -->
+    <p class="tagline">Authentic Indian Vegetarian Tiffin Service 🍲</p>
     <div class="hygiene">
       <img src="Hygiene rating.jpg" alt="5 Star Food Hygiene Rating">
     </div>
@@ -121,12 +291,12 @@
     <section class="info">
       <h2>About Us</h2>
       <p>
-        <span class="highlight">Kaku’s Kitchen</span> brings you fresh, homemade vegetarian Indian meals, lovingly prepared with authentic recipes and traditional flavors.  
-        Our tiffin service is perfect for anyone who craves healthy, home-style food without the hassle of cooking.  
+        <span class="highlight">Kaku’s Kitchen</span> brings you fresh, homemade <strong>Indian vegetarian meals</strong>, lovingly prepared with authentic recipes and traditional spices.  
+        Our tiffin service is perfect for anyone who craves <em>healthy, home-style Indian food</em> without the hassle of cooking.  
         Each tiffin includes two wholesome curries, soft chapatis, and fluffy rice — a complete and satisfying meal made with care.
      </p>
      <p>
-       We take pride in serving nutritious, freshly cooked food that tastes just like home. Whether you’re a student, professional, or family,  
+       We take pride in serving nutritious, freshly cooked vegetarian meals that taste just like home. Whether you’re a student, professional, or family,  
        our tiffins are designed to bring comfort and convenience to your dining table.
      </p>
       <div class="address">
@@ -143,41 +313,44 @@
       </p>
     </section>
 
-    <section class="menu">
-      <h2>Weekly Tiffin Menu</h2>
-      <table>
-        <tr>
-          <th>Day</th>
-          <th>Curries</th>
-          <th>Includes</th>
-        </tr>
-        <tr>
-          <td>Monday</td>
-          <td>Dal Tadka, Bhindi</td>
-          <td>2 Chapatis + Rice Box</td>
-        </tr>
-        <tr>
-          <td>Tuesday</td>
-          <td>Chola Masala, Aaloo Jeera</td>
-          <td>2 Chapatis + Rice Box</td>
-        </tr>
-        <tr>
-          <td>Wednesday</td>
-          <td>Kadhi Pakoda, Aaloo Beans</td>
-          <td>2 Chapatis + Rice Box</td>
-        </tr>
-        <tr>
-          <td>Thursday</td>
-          <td>Matar Paneer, Mix Veg</td>
-          <td>2 Chapatis + Rice Box</td>
-        </tr>
-        <tr>
-          <td>Friday</td>
-          <td>Raajma, Aalo Palak</td>
-          <td>2 Chapatis + Rice Box</td>
-        </tr>
-      </table>
-    </section>
+<section class="menu">
+  <h2>🥘 Weekly Tiffin Menu</h2>
+  <div class="menu-card">
+    <table>
+      <tr>
+        <th>Day</th>
+        <th>Curries</th>
+        <th>Includes</th>
+      </tr>
+      <tr>
+        <td><strong>Monday</strong></td>
+        <td>Dal Tadka, Bhindi</td>
+        <td>2 Chapatis + Rice Box</td>
+      </tr>
+      <tr>
+        <td><strong>Tuesday</strong></td>
+        <td>Chola Masala, Aaloo Jeera</td>
+        <td>2 Chapatis + Rice Box</td>
+      </tr>
+      <tr>
+        <td><strong>Wednesday</strong></td>
+        <td>Kadhi Pakoda, Aaloo Beans</td>
+        <td>2 Chapatis + Rice Box</td>
+      </tr>
+      <tr>
+        <td><strong>Thursday</strong></td>
+        <td>Matar Paneer, Mix Veg</td>
+        <td>2 Chapatis + Rice Box</td>
+      </tr>
+      <tr>
+        <td><strong>Friday</strong></td>
+        <td>Raajma, Aalo Palak</td>
+        <td>2 Chapatis + Rice Box</td>
+      </tr>
+    </table>
+  </div>
+</section>
+
 
     <section class="pricing">
       <h2>Pricing & Delivery</h2>
@@ -188,14 +361,16 @@
         <li>Delivery available in other areas at extra cost</li>
       </ul>
 
-      <!-- Food Hygiene Rating again -->
       <div class="hygiene">
         <img src="Hygiene rating.jpg" alt="5 Star Food Hygiene Rating">
       </div>
 
       <p>
-        <a class="order-btn" href="https://wa.me/447443922018?text=Hi%20Kaku%27s%20Kitchen%2C%20I%20would%20like%20to%20place%20a%20tiffin%20order." target="_blank">
+        <a class="btn" href="https://wa.me/447443922018?text=Hi%20Kaku%27s%20Kitchen%2C%20I%20would%20like%20to%20place%20a%20tiffin%20order." target="_blank">
           📦 Order Now via WhatsApp
+        </a>
+        <a class="order-btn" id="bookTiffinBtn" href="javascript:void(0);">
+          📅 Book Tiffin Service
         </a>
       </p>
     </section>
@@ -203,25 +378,25 @@
   </div>
 
   <!-- n8n Chat widget JS -->
-<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
-<script type="module">
-	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
-
-	createChat({
-		webhookUrl: "https://n8n-kakuskitchen.onrender.com/webhook/274d36ca-cada-4d13-88ba-7c6ffce17c55/chat",
+  <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+  <script type="module">
+    import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+    createChat({
+      webhookUrl: "https://n8n-kakuskitchen.onrender.com/webhook/274d36ca-cada-4d13-88ba-7c6ffce17c55/chat",
       initialMessages: [
-        "Hi there!",
-        "My name is Kaku. How can I assist you choosing from our menu?"
+        "Hi there! 🙏",
+        "Welcome to Kaku’s Kitchen, your Indian vegetarian tiffin service.",
+        "How can I assist you today?"
       ],
       i18n: {
         en: {
-          title: "Hi there!",
-          subtitle: "Start a chat. We're here to help you 24/7.",
+          title: "Namaste! 👋",
+          subtitle: "Ask us about meals, prices, or bookings.",
           inputPlaceholder: "Type your question..."
         }
       }
-	});
-</script>
+    });
+  </script>
 
   <footer>
     <p>© 2025 Kaku's Kitchen | Homemade with Love</p>
@@ -229,6 +404,127 @@
       <a href="https://www.facebook.com/kakuskitcheninPenarth" target="_blank">📘 Visit us on Facebook</a>
     </p>
   </footer> 
+<!-- Booking Modal -->
+<div id="tiffinModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Book Your Tiffin</h2>
+
+    <form id="tiffinForm">
+      <label><strong>Select Days:</strong></label>
+      <div class="day-buttons">
+        <button type="button" class="day-btn" data-day="Monday">Monday</button>
+        <button type="button" class="day-btn" data-day="Tuesday">Tuesday</button>
+        <button type="button" class="day-btn" data-day="Wednesday">Wednesday</button>
+        <button type="button" class="day-btn" data-day="Thursday">Thursday</button>
+        <button type="button" class="day-btn" data-day="Friday">Friday</button>
+      </div>
+
+      <!-- Multiple days stored here -->
+      <input type="hidden" name="selectedDays" id="selectedDays" required>
+
+      <label for="name">Full Name *</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email *</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">Contact Number *</label>
+      <input type="tel" id="phone" name="phone" required pattern="[0-9+ ]+">
+
+      <label for="instructions">Special Instructions</label>
+      <textarea id="instructions" name="instructions"></textarea>
+
+      <button type="submit" class="submit-btn">✅ Confirm Booking</button>
+    </form>
+  </div>
+</div>
+<script>
+  const modal = document.getElementById("tiffinModal");
+  const btn = document.getElementById("bookTiffinBtn");
+  const span = document.getElementsByClassName("close")[0];
+  const dayBtns = document.querySelectorAll(".day-btn");
+  const selectedDaysInput = document.getElementById("selectedDays");
+
+  // Open modal
+  btn.onclick = () => modal.style.display = "flex";
+  span.onclick = () => modal.style.display = "none";
+  window.onclick = (e) => { if (e.target == modal) modal.style.display = "none"; };
+
+  // Disable today (only allow bookings from tomorrow onwards)
+  const todayIndex = new Date().getDay(); // Sun=0, Mon=1, ..., Fri=5
+  dayBtns.forEach((btn, i) => {
+    if (i + 1 === todayIndex || todayIndex === 5) {
+      btn.classList.add("disabled");
+      btn.disabled = true;
+    }
+  });
+
+  // Track multi-day selection
+  let selectedDays = [];
+  dayBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      if (!btn.classList.contains("disabled")) {
+        const day = btn.dataset.day;
+        if (selectedDays.includes(day)) {
+          selectedDays = selectedDays.filter(d => d !== day);
+          btn.style.background = "#87CEEB";
+          btn.style.color = "#000";
+        } else {
+          selectedDays.push(day);
+          btn.style.background = "#138808";
+          btn.style.color = "white";
+        }
+        selectedDaysInput.value = selectedDays.join(", ");
+      }
+    });
+  });
+
+  // Submit form → send to n8n
+  document.getElementById("tiffinForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    if (!selectedDays.length) {
+      alert("⚠️ Please select at least one day.");
+      return;
+    }
+
+    const bookingData = {
+      days: selectedDays,
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      phone: document.getElementById("phone").value,
+      instructions: document.getElementById("instructions").value
+    };
+
+    try {
+      const response = await fetch("https://n8n-kakuskitchen.onrender.com/webhook-test/13fe94fa-ee45-43cf-8027-aadf2253e955", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(bookingData)
+      });
+
+      if (response.ok) {
+        alert("✅ Your booking was sent successfully!");
+        modal.style.display = "none";
+        e.target.reset();
+        selectedDays = [];
+        dayBtns.forEach(b => { 
+          if (!b.classList.contains("disabled")) {
+            b.style.background = "#87CEEB";
+            b.style.color = "#000";
+          }
+        });
+      } else {
+        alert("❌ Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      alert("⚠️ Network error. Please try again later.");
+      console.error(error);
+    }
+  });
+</script>
+
 
 </body>
 </html>
