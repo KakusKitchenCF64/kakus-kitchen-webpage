@@ -513,6 +513,7 @@ input, textarea {
             email: document.getElementById("email").value,
             phone: document.getElementById("phone").value,
             instructions: document.getElementById("instructions").value
+			date: new Date().toLocaleString() // This is the new field to send the current date and time
         };
 
         try {
