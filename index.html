@@ -382,16 +382,15 @@ input, textarea {
   <script type="module">
     import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
     createChat({
-      webhookUrl: "https://n8n-kakuskitchen.onrender.com/webhook/274d36ca-cada-4d13-88ba-7c6ffce17c55/chat",
+      webhookUrl: "https://n8n-kakuskitchen.onrender.com/webhook/bfb0abe6-4dca-434f-a757-36e8957c9e03/chat",
+	  //"https://n8n-kakuskitchen.onrender.com/webhook/274d36ca-cada-4d13-88ba-7c6ffce17c55/chat",
       initialMessages: [
-        "Hi there! 🙏",
-        "Welcome to Kaku’s Kitchen, your Indian vegetarian tiffin service.",
-        "How can I assist you today?"
+        "Hi, I am Kaku. I am here to help you with Menu.",
       ],
       i18n: {
         en: {
-          title: "Namaste! 👋",
-          subtitle: "Ask us about meals, prices, or bookings.",
+          //title: "Namaste! 👋",
+          subtitle: ""Namaste! 👋",
           inputPlaceholder: "Type your question..."
         }
       }
@@ -518,7 +517,7 @@ input, textarea {
 
         try {
             const response = await fetch(
-			"https://n8n-kakuskitchen.onrender.com/webhook/b3b3c16d-3d36-492b-a20f-f6043a1128d7",
+			"https://n8n-kakuskitchen.onrender.com/webhook-test/b3b3c16d-3d36-492b-a20f-f6043a1128d7",
 			//"https://n8n-kakuskitchen.onrender.com/webhook/13fe94fa-ee45-43cf-8027-aadf2253e955",
 			// "https://n8n-kakuskitchen.onrender.com/webhook-test/13fe94fa-ee45-43cf-8027-aadf2253e955", 
 			{
